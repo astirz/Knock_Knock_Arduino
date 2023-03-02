@@ -49,7 +49,7 @@ void loop() {
 
       int delta = mx - mn; // Larger delta corresponds to a larger amplitude waveform, and a louder sound:
       if (delta > 20) {  // Microphone detects "knock" delta value as 25 - by experiment
-        // This will output the "Knock" message only once even if the signal remains at HIGH.
+        // This will output the "Knock" message only once even if the signal remains over 20.
         if (!noiseAlarm) {                
           lastSoundDetectTime = millis();
                 if (millis() - lastSoundDetectTime > 5000) {   // If second set of knocks is TRUE, go to LED3 function
